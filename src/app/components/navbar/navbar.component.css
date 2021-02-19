@@ -1,0 +1,13 @@
+.color{
+  background-color: #000000;
+}
+.navbar-toggler{
+  background-color: grey !important;
+}
+.align{
+  align-items: center;
+  text-align: center;
+}
+.colorTab{
+  color : #a6eee6ff;
+}

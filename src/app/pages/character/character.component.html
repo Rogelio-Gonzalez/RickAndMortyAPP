@@ -1,0 +1,45 @@
+<body class="background ">
+  <section>
+    <div class="row m-3">
+
+      <div class="card backCard" >
+        <div class="row">
+          <div class="col mt-3  ">
+            <button class="btn btn-danger " (click)="goBack()">
+              <i class="fa fa-chevron-left" aria-hidden="true"></i>
+               Back
+            </button>
+          </div>
+          <div class="col mt-2 ">
+            <img src="{{character.image}}" class="card-img-top pic" >
+          </div>
+          <div class="col">
+            <button class="btn color" *ngIf="favorite"(click)="favoriteCharacter()" >
+              <i class="fa fa-star color fa-4x" aria-hidden="true"></i>
+            </button>
+            <button class="btn color"  *ngIf="!favorite"(click)="favoriteCharacter()" >
+              <i class="fa fa-star colorFalse fa-4x" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <div class=" text-center text-light">
+          <h5 class="">{{character.name}}</h5>
+          <p class=" " *ngIf="character.status== 'Dead'"><i class="fa fa-circle colorRed" aria-hidden="true"></i>   {{character.status}} - {{character.gender}}</p>
+            <p class="" *ngIf="character.status== 'Alive'"><i class="fa fa-circle colorGreen" aria-hidden="true"></i>   {{character.status}} - {{character.gender}}</p>
+            <p class="" *ngIf="character.status== 'unknown'"><i class="fa fa-question-circle-o" aria-hidden="true"></i>   {{character.status | capitalLetter}} - {{character.gender}}</p>
+            <small class="text-muted">Last known location:</small>
+            <p class=""> {{character.location.name}}</p>
+            <small class="text-muted">First seen in:</small>
+            <p class="" *ngIf="character.origin.name=='unknown'"> {{character.origin.name | capitalLetter}}</p>
+            <p class="" *ngIf="character.origin.name!=='unknown'"> {{character.origin.name}}</p>
+            <small class="text-muted">Episodes:</small>
+            <p *ngFor = "let i of character.episode">{{i | slice:32:45 | capitalLetter }}</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</body>
+
+
+

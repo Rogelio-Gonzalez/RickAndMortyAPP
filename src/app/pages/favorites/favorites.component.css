@@ -1,0 +1,13 @@
+table.table tbody tr td,
+table.table thead tr th,
+table.table thead{
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+
+
+}
+.sizePic{
+  height: 80px;
+  width: 80px;
+}

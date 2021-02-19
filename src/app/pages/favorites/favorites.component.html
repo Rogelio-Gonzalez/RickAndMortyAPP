@@ -1,0 +1,39 @@
+<body class="background3">
+  <div class="row m-3">
+    <div class="col">
+      <div class="table-responsive">
+        <table class="table" style="background-color: #151414;">
+          <thead class="thead text-center text-light">
+            <tr>
+              <th>Image</th>
+              <th >Name</th>
+              <th >Status</th>
+              <th >Location</th>
+              <th>First seen in</th>
+              <th >Delete</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="deleted==true">
+            <tr class=" text-center text-light" *ngFor = "let character of characters">
+              <td >
+                <img src="{{character.image}}" class="sizePic">
+              </td>
+              <td >{{character.name}}</td>
+              <td >{{character.status | capitalLetter}}</td>
+              <td>{{character.location.name}}</td>
+              <td>{{character.origin.name |capitalLetter}}</td>
+              <td >
+              <div class="d-grid gap-2 col mx-auto ">
+                <button class="btn btn-danger m-2" (click)="deleteFavorite()" >
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                  Delete
+                </button>
+              </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
